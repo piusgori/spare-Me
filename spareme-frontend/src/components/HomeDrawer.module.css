@@ -1,0 +1,7 @@
+.topContainer {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #4fad2e;
+    display: flex;
+    flex-direction: column;
+}
