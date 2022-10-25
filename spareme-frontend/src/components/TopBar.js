@@ -56,14 +56,11 @@ const AppIconButton = styled(IconButton)(() => ({
     color: Colors.white
 }));
 
-const MobileBar = ({ openDrawer }) => {
-
-  const pos = window.pageYOffset;
-  const isTop = pos < 50;
+const MobileBar = ({ openDrawer, isTop }) => {
 
     return (
         <Box sx={{ flexGrow: 1, position: 'absolute', zIndex: 99, width: '100%' }}>
-            <AppBar position="static" sx={{ background: isTop ? 'transparent' : Colors.primary }}>
+            <AppBar elevation={0} position="fixed" sx={{ background: isTop ? 'transparent' : Colors.primary }}>
                 <Toolbar>
                 <AppIconButton onClick={openDrawer} size="large" edge="start" color='default' aria-label="open drawer" sx={{ mr: 2 }}><MenuIcon /></AppIconButton>
                 <Search>
@@ -77,14 +74,11 @@ const MobileBar = ({ openDrawer }) => {
     )
 };
 
-const DesktopBar = () => {
-
-  const pos = window.pageYOffset;
-  const isTop = pos < 50;
+const DesktopBar = ({ isTop }) => {
 
     return (
         <Box sx={{ flexGrow: 1, position: 'absolute', zIndex: 99, width: '100%' }}>
-            <AppBar position="static" sx={{ background: isTop ? 'transparent' : Colors.primary }}>
+            <AppBar elevation={0} position="fixed" sx={{ background: isTop ? 'transparent' : Colors.primary }}>
                 <Toolbar>
                 <Search>
                     <SearchIconWrapper><SearchIcon sx={{ color: Colors.white }} /></SearchIconWrapper>
@@ -103,7 +97,7 @@ const DesktopBar = () => {
     )
 };
 
-export default function TopBar() {
+export default function TopBar({ isTop }) {
 
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
@@ -115,5 +109,5 @@ export default function TopBar() {
         if(matches) setDrawerOpen(true);
     }
 
-  return matches ? <MobileBar openDrawer={openDrawer}></MobileBar> : <DesktopBar></DesktopBar>
+  return matches ? <MobileBar isTop={isTop} openDrawer={openDrawer}></MobileBar> : <DesktopBar isTop={isTop}></DesktopBar>
 }

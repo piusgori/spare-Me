@@ -1,8 +1,30 @@
 .top {
-    background-image: url('https://media.istockphoto.com/photos/close-up-of-tire-picture-id154002509?b=1&k=20&m=154002509&s=170667a&w=0&h=Bl2lK3Qa4hEb_x4KV-xehr80BLB9twEYqhFHh2TqUX8=');
+    background-image: url('../../images/cover.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
+    overflow: hidden;
+}
+.centered {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    color: white;
+    font-weight: 100;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
 }

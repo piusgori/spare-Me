@@ -1,4 +1,4 @@
-import { Add, ChatBubbleRounded, Close, LiveHelpRounded, PinDropOutlined } from '@mui/icons-material';
+import { Add, ChatBubbleRounded, Close, LiveHelpRounded, PinDropOutlined, PostAdd } from '@mui/icons-material';
 import { Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import React, { useContext } from 'react'
 import { InterfaceContext } from '../services/interface-context';
@@ -40,6 +40,24 @@ const HomeDrawer = () => {
                     <ListItemButton>
                         <ListItemIcon><Add></Add></ListItemIcon>
                         <ListItemText primary='Post Inquiry' sx={{ color: 'black' }}></ListItemText>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem>
+                    <ListItemButton>
+                        <ListItemIcon><PostAdd></PostAdd></ListItemIcon>
+                        <ListItemText primary='Post a spare shop' sx={{ color: 'black' }}></ListItemText>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem>
+                    <ListItemButton>
+                        <ListItemIcon><PostAdd></PostAdd></ListItemIcon>
+                        <ListItemText primary='Post a garage' sx={{ color: 'black' }}></ListItemText>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem>
+                    <ListItemButton>
+                        <ListItemIcon><PostAdd></PostAdd></ListItemIcon>
+                        <ListItemText primary='Post spare services' sx={{ color: 'black' }}></ListItemText>
                     </ListItemButton>
                 </ListItem>
             </List>
